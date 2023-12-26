@@ -4,6 +4,7 @@
  */
 package login;
 
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -24,7 +25,7 @@ public class Register extends javax.swing.JFrame{
     
     private void autonumber(){
         try{
-            Connection c = Koneksi.getKoneksi();
+            Connection c = connectDatabase.getDatabase();
             Statement s = c.createStatement();
             String sql = "SELECT * FROM login ORDER BY id DESC";
             ResultSet r = s.executeQuery(sql);
@@ -116,6 +117,7 @@ public class Register extends javax.swing.JFrame{
 
         jButton1.setText("Register");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
@@ -123,6 +125,7 @@ public class Register extends javax.swing.JFrame{
 
         jButton2.setText("Cancel");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
@@ -195,11 +198,11 @@ public class Register extends javax.swing.JFrame{
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        String id = txID.getText().toString().trim();
-        String username = txUsername.getText().toString().trim();
-        String password = txPassword.getText().toString().trim();
-        String conPassword = txConPassword.getText().toString().trim();
-        String email = txEmail.getText().toString().trim();
+        String id = txID.getText().trim();
+        String username = txUsername.getText().trim();
+        String password = txPassword.getText().trim();
+        String conPassword = txConPassword.getText().trim();
+        String email = txEmail.getText().trim();
         
         
         if (!isValidEmail(email)){
@@ -210,7 +213,7 @@ public class Register extends javax.swing.JFrame{
             JOptionPane.showMessageDialog(null, "Email or Username or Password cannot be empty");
         }else{
             try{
-                Connection c = Koneksi.getKoneksi();
+                Connection c = connectDatabase.getDatabase();
                 String sql = "INSERT INTO login (id, username, password, email) VALUES (?, ?, ?, ?)";
                 PreparedStatement p = c.prepareStatement(sql);
                 p.setString(1, id);
@@ -225,8 +228,7 @@ public class Register extends javax.swing.JFrame{
                 System.out.println("Error");
             }finally{
                 this.dispose();
-                Login a = new Login();
-                a.setVisible(true);
+                new Login().setVisible(true);
             }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
