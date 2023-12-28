@@ -150,7 +150,8 @@ public class Login extends javax.swing.JFrame{
                 JOptionPane.showMessageDialog(null, "Login Successfully");
                 this.dispose(); //close the form
                 setVisible(false);
-                new MainPage().setVisible(true);
+                //new quizStudent(username, userId).setVisible(true);
+                new instructionStudent(userId).setVisible(true);
             }else{
                 JOptionPane.showMessageDialog(null, "Wrong Email or Username or Password");
                 txPassword.requestFocus();
