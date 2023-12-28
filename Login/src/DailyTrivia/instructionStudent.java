@@ -25,7 +25,7 @@ public String username;
         userId = id1;
         JOptionPane.showMessageDialog(null, id1);
         
-        File instruction = new File ("C:\\Users\\60187\\Documents\\NetBeansProjects\\Assignment\\Login\\src\\DailyTrivia\\instruction.txt");
+        File instruction = new File ("instruction.txt");
         
         try{
             Scanner sc = new Scanner (instruction);
@@ -71,6 +71,7 @@ public String username;
         jTextArea1 = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -102,12 +103,15 @@ public String username;
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/DailyTrivia/pink background 700.jpg"))); // NOI18N
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
+        jLabel6.setText("jLabel6");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 180, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         setVisible(false);
-        new quizStudent(username, userId).setVisible(true);
+        new quizStudent(userId, username).setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -155,6 +159,7 @@ public String username;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextArea jTextArea1;

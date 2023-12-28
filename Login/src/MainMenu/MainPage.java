@@ -28,13 +28,14 @@ public class MainPage extends javax.swing.JFrame {
 
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
-        jButton5 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        btnNewsSection = new javax.swing.JButton();
+        btnPointsShop = new javax.swing.JButton();
+        btnLeaderBoard = new javax.swing.JButton();
+        btnCheckIn = new javax.swing.JButton();
+        btnDailyTrivia = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         jMenuItem1.setText("jMenuItem1");
@@ -43,33 +44,6 @@ public class MainPage extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jButton5.setFont(new java.awt.Font("Tempus Sans ITC", 1, 18)); // NOI18N
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainMenu/pointsshop.png"))); // NOI18N
-        jButton5.setText("     Points Shop");
-        jButton5.setActionCommand("        Points Shop");
-        jButton5.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 310, 290, 100));
-
-        jButton4.setFont(new java.awt.Font("Tempus Sans ITC", 1, 18)); // NOI18N
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainMenu/news.png"))); // NOI18N
-        jButton4.setText("     News Section");
-        jButton4.setToolTipText("");
-        jButton4.setActionCommand("        News Section");
-        jButton4.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 290, 100));
-
-        jButton3.setFont(new java.awt.Font("Tempus Sans ITC", 1, 18)); // NOI18N
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainMenu/daily check-in.png"))); // NOI18N
-        jButton3.setText("     Daily Check-In");
-        jButton3.setBorder(null);
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, 290, 100));
-
-        jButton2.setFont(new java.awt.Font("Tempus Sans ITC", 1, 18)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainMenu/quiz.png"))); // NOI18N
-        jButton2.setText("     Daily Trivia");
-        jButton2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 190, 290, 100));
 
         jPanel1.setBackground(new java.awt.Color(242, 249, 168, 240));
 
@@ -99,24 +73,128 @@ public class MainPage extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(0, 102, 51, 100));
 
+        btnNewsSection.setFont(new java.awt.Font("Tempus Sans ITC", 1, 18)); // NOI18N
+        btnNewsSection.setIcon(new javax.swing.ImageIcon(getClass().getResource("/login/news.png"))); // NOI18N
+        btnNewsSection.setText("     News Section");
+        btnNewsSection.setToolTipText("");
+        btnNewsSection.setActionCommand("        News Section");
+        btnNewsSection.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btnNewsSection.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNewsSectionActionPerformed(evt);
+            }
+        });
+
+        btnPointsShop.setFont(new java.awt.Font("Tempus Sans ITC", 1, 18)); // NOI18N
+        btnPointsShop.setIcon(new javax.swing.ImageIcon(getClass().getResource("/login/pointsshop.png"))); // NOI18N
+        btnPointsShop.setText("     Points Shop");
+        btnPointsShop.setActionCommand("        Points Shop");
+        btnPointsShop.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btnPointsShop.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPointsShopActionPerformed(evt);
+            }
+        });
+
+        btnLeaderBoard.setFont(new java.awt.Font("Tempus Sans ITC", 1, 18)); // NOI18N
+        btnLeaderBoard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/login/icons8-leaderboard-48_1.png"))); // NOI18N
+        btnLeaderBoard.setText("   Leaderboard");
+        btnLeaderBoard.setToolTipText("");
+        btnLeaderBoard.setActionCommand("        News Section");
+        btnLeaderBoard.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btnLeaderBoard.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLeaderBoardActionPerformed(evt);
+            }
+        });
+
+        btnCheckIn.setFont(new java.awt.Font("Tempus Sans ITC", 1, 18)); // NOI18N
+        btnCheckIn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/login/daily check-in.png"))); // NOI18N
+        btnCheckIn.setText("     Daily Check-In");
+        btnCheckIn.setBorder(null);
+        btnCheckIn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCheckInActionPerformed(evt);
+            }
+        });
+
+        btnDailyTrivia.setFont(new java.awt.Font("Tempus Sans ITC", 1, 18)); // NOI18N
+        btnDailyTrivia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/login/quiz.png"))); // NOI18N
+        btnDailyTrivia.setText("     Daily Trivia");
+        btnDailyTrivia.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btnDailyTrivia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDailyTriviaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 890, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(150, 150, 150)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(btnCheckIn, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnNewsSection, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(btnDailyTrivia, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnPointsShop, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(142, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnLeaderBoard, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(297, 297, 297))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 380, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(56, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnNewsSection, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCheckIn, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnPointsShop, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnDailyTrivia, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(btnLeaderBoard, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48))
         );
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 890, 380));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainMenu/road_between_green_trees_grass_plants_bushes_sunbeam_hd_nature.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/login/road_between_green_trees_grass_plants_bushes_sunbeam_hd_nature.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-2, 0, 900, 500));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCheckInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCheckInActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCheckInActionPerformed
+
+    private void btnDailyTriviaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDailyTriviaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnDailyTriviaActionPerformed
+
+    private void btnNewsSectionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewsSectionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnNewsSectionActionPerformed
+
+    private void btnPointsShopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPointsShopActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnPointsShopActionPerformed
+
+    private void btnLeaderBoardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLeaderBoardActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLeaderBoardActionPerformed
 
     /**
      * @param args the command line arguments
@@ -154,10 +232,11 @@ public class MainPage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton btnCheckIn;
+    private javax.swing.JButton btnDailyTrivia;
+    private javax.swing.JButton btnLeaderBoard;
+    private javax.swing.JButton btnNewsSection;
+    private javax.swing.JButton btnPointsShop;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenuItem jMenuItem1;
